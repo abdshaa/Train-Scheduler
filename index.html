@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Train Scheduler</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"
+    ></script>
 
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron text-center bg-success text-white">
+        <h1>Train Times</h1>
+      </div>
+
+      <!-- "Current Train Schedule" Table -->
+
+      <div class="panel panel-success text-success">
+        <div class="panel-heading"><h3>Current Train Schedule</h3></div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency(min)</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+              </tr>
+            </thead>
+
+            <!-- Train info goes here! -->
+            <tbody id="add-row"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Form for adding a new train -->
+
+      <div class="panel panel-success text-success">
+        <div class="panel-heading">
+          <h3>Add Train</h3>
+        </div>
+
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="text">Train Name</label>
+              <input type="text" class="form-control" id="train-name" />
+            </div>
+
+            <div class="form-group">
+              <label for="text">Destination</label>
+              <input type="text" class="form-control" id="destination" />
+            </div>
+
+            <div class="form-group">
+              <label for="text">First Train Time (HH:mm - Military Time)</label>
+              <input type="text" class="form-control" id="first-train" />
+            </div>
+
+            <div class="form-group">
+              <label for="text">Frequency(min)</label>
+              <input type="text" class="form-control" id="frequency" />
+            </div>
+
+            <button
+              type="submit"
+              id="add-train"
+              class="btn btn-success"
+              id="addTrain"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
