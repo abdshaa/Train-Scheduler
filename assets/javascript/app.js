@@ -48,7 +48,7 @@ $(document).ready(function() {
   database.ref().on("child_added", function(childSnapshot) {
     var nextArr;
     var minAway;
-    // Chang year so first train comes before now
+    // Change year so first train comes before now
     var firstTrainNew = moment(
       childSnapshot.val().firstTrain,
       "hh:mm"
@@ -77,15 +77,11 @@ $(document).ready(function() {
     );
   });
 
-  database
-    .ref()
-    .orderByChild("dateAdded")
-    .limitToLast(1)
-    .on("child_added", function(snapshot) {
-      // Change the HTML to reflect
-      $("#name-display").html(snapshot.val().name);
-      $("#email-display").html(snapshot.val().email);
-      $("#age-display").html(snapshot.val().age);
-      $("#comment-display").html(snapshot.val().comment);
-    });
+  database.ref().on("child_added", function(snapshot) {
+    // Change the HTML to reflect
+    $("#name-display").html(snapshot.val().name);
+    $("#email-display").html(snapshot.val().email);
+    $("#age-display").html(snapshot.val().age);
+    $("#comment-display").html(snapshot.val().comment);
+  });
 });
