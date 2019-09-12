@@ -11,6 +11,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script type="text/css" src="assets/css/style.css"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -22,17 +23,25 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+    <style>
+      body {
+        background: url(https://static1.squarespace.com/static/596fdea620099e91f5aa8c65/5cc05a994785d3ecec97d980/5cd2c8c4ec212d21abf6c989/1557481280027/soroush-karimi-192112-unsplash.jpg?format=1000w)
+          no-repeat center center fixed;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron text-center bg-success text-white">
+      <div class="jumbotron text-center bg-transparent text-white">
         <h1>Train Times</h1>
       </div>
 
-      <div class="panel panel-success text-success">
+      <div class="panel panel-secondary text-white">
         <div class="panel-heading"><h3>Current Train Schedule</h3></div>
         <div class="panel-body">
-          <table class="table">
+          <table class="table text-white">
             <thead>
               <tr>
                 <th>Train Name</th>
@@ -51,7 +60,7 @@
 
       <!-- Form for adding a new train -->
 
-      <div class="panel panel-success text-success">
+      <div class="panel panel-dark text-white">
         <div class="panel-heading">
           <h3>Add Train</h3>
         </div>
@@ -81,7 +90,7 @@
             <button
               type="submit"
               id="add-train"
-              class="btn btn-success"
+              class="btn btn-secondary"
               id="addTrain"
             >
               Submit
